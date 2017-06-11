@@ -1,0 +1,5 @@
+function reverseString(str) {
+  return str.split("").reverse().join(""); //splits, reverses, and joins the string together in one line
+}
+
+reverseString("hello");
