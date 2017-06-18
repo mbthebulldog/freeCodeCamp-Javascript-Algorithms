@@ -1,3 +1,7 @@
+---
+layout: default
+title: Caesar’s Cipher
+---
 function rot13(str) {
   var arr = [];
   

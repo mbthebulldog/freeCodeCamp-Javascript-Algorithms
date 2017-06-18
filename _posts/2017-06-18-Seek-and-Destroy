@@ -1,3 +1,7 @@
+---
+layout: default
+title: Seek and Destroy
+---
 function destroyer(arr) {
   var deletors = Array.prototype.slice.call(arguments, 1); //gets elimination values from the arguments (by slicing AFTER arguments[0], which is arr)
 
