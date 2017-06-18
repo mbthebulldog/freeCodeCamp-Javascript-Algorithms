@@ -78,17 +78,20 @@ header h2 {
 /* Main Content
 */
 
-#main_content {
-  width: 70%;
-  -webkit-font-smoothing: antialiased;
-}
-section img {
-  max-width: 100%
+#archive {
+  width: auto;
+  float: left;
+  margin-right: 10px;
 }
 
-.floaters {
-  float: left;
-  width: 10%;
+#main_content {
+  width: 100%;
+  display: block;
+  -webkit-font-smoothing: antialiased;
+}
+
+section img {
+  max-width: 100%
 }
 
 h1, h2, h3, h4, h5, h6 {
