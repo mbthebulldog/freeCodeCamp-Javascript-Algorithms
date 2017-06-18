@@ -1,3 +1,7 @@
+---
+layout: default
+title: Truncate a String
+---
 function truncateString(str, num) {
   
   if (str.length > num) { //if str < num, simply return str

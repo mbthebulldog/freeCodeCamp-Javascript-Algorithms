@@ -1,3 +1,7 @@
+---
+layout: default
+title: Title Case a Sentence
+---
 function titleCase(str) {
   str = str.toLowerCase(); //first step: make all the letters lowercase
   str = str.split(/\s/g); //next, split into words

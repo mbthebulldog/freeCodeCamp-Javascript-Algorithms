@@ -1,3 +1,7 @@
+---
+layout: default
+title: Where Do I Belong?
+---
 function getIndexToIns(arr, num) {
   arr.push(num); //adds the new number to the array
   arr.sort(function(a, b){return a-b;}); //sorts the array from smallest to largest
