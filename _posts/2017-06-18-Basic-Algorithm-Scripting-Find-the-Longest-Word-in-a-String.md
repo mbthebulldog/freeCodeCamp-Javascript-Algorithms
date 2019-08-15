@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Find the Longest Word in a String
+title: Basic Algorithm Scripting: Find the Longest Word in a String
 ---
 function findLongestWord(str) {
   str = str.split(/\s/g); //split the string at every space

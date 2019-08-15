@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mutations
+title: Basic Algorithm Scripting: Mutations
 ---
 function mutation(arr) {
   

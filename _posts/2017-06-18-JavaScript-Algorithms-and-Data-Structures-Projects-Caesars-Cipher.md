@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Caesar’s Cipher
+title: JavaScript Algorithms and Data Structures Projects: Caesars Cipher
 ---
 function rot13(str) {
   var arr = [];

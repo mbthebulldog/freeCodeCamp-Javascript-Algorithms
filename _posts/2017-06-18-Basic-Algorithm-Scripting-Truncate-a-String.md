@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Truncate a String
+title: Basic Algorithm Scripting: Truncate a String
 ---
 function truncateString(str, num) {
   

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Create Strings using Template Literals
+title: ES6: Create Strings using Template Literals
 ---
 const result = {
   success: ["max-length", "no-amd", "prefer-arrow-functions"],

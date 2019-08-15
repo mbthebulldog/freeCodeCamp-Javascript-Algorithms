@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Return Largest Numbers in Arrays
+title: Basic Algorithm Scripting: Return Largest Numbers in Arrays
 ---
 function largestOfFour(arr) {
   var largeArr = [];

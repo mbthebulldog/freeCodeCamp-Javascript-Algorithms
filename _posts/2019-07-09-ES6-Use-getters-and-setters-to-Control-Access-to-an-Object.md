@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Use getters and setters to Control Access to an Object
+title: ES6: Use getters and setters to Control Access to an Object
 ---
 function makeClass() {
   "use strict";

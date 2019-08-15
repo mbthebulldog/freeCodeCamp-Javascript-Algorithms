@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Seek and Destroy
+title: Intermediate Algorithm Scripting: Seek and Destroy
 ---
 function destroyer(arr) {
   //gets elimination values from the arguments (by slicing AFTER arguments[0], which is arr)

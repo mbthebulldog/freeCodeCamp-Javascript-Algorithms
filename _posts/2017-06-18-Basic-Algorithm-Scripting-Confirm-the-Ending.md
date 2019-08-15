@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Confirm the Ending
+title: Basic Algorithm Scripting: Confirm the Ending
 ---
 function confirmEnding(str, target) {
   str = str.substr(str.length - target.length, target.length); //delete all but the last letter of the string

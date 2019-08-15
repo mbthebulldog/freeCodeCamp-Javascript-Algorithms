@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Chunky Monkey
+title: Basic Algorithm Scripting: Chunky Monkey
 ---
 function chunkArrayInGroups(arr, size) {
   var toofer = [];

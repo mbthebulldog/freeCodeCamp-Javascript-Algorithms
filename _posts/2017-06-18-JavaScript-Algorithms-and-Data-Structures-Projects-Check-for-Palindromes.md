@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Check for Palindromes
+title: JavaScript Algorithms and Data Structures Projects: Check for Palindromes
 ---
 function palindrome(str) {
   str = str.toLowerCase().replace(/[\W_]/g, '');  //makes all uppercase letters lowercase and eliminates all non-letters

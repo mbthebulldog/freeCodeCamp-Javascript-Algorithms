@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Factorialize a Number
+title: Basic Algorithm Scripting: Factorialize a Number
 ---
 function factorialize(num) {
   return num === 0 ? 1 : num * factorialize(num - 1);

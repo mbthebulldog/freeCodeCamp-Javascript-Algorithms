@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Mutate an Array Declared with const
+title: ES6: Mutate an Array Declared with const
 ---
 const s = [5, 7, 2];
 function editInPlace() {

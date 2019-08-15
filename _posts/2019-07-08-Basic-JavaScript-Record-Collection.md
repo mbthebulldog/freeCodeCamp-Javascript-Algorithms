@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Record Collection
+title: Basic JavaScript: Record Collection
 ---
 // Setup
 var collection = {

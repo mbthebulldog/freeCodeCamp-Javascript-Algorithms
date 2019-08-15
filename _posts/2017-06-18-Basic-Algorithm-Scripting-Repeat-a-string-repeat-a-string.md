@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Repeat a String Repeat a String
+title: Basic Algorithm Scripting: Repeat a String Repeat a String
 ---
 function repeatStringNumTimes(str, num) {
   var long = '';

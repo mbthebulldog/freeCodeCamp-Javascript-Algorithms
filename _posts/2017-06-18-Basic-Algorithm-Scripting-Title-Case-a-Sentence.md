@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Title Case a Sentence
+title: Basic Algorithm Scripting: Title Case a Sentence
 ---
 function titleCase(str) {
   str = str.toLowerCase(); //first step: make all the letters lowercase

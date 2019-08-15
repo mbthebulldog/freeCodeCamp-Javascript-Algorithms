@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Falsy Bouncer
+title: Basic Algorithm Scripting: Falsy Bouncer
 ---
 function bouncer(arr) {
     return arr.filter(Boolean);

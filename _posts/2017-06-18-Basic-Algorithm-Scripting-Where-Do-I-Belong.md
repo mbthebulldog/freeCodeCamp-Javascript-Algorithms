@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Where Do I Belong?
+title: Basic Algorithm Scripting: Where Do I Belong?
 ---
 function getIndexToIns(arr, num) {
   arr.push(num); //adds the new number to the array
