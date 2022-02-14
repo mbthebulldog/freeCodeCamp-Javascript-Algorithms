@@ -1,0 +1,36 @@
+---
+layout: default
+title: Binary Agents
+---
+  function addTogether() {
+    //Set first two arguments to variables
+    var [a, b] = arguments;
+    //Debug
+    console.log(a, b);
+
+    //If a is not a number, return undefined
+    if (typeof a != "number") {
+      //Debug
+      console.log("First arg is NaN");
+      return undefined;
+    }
+
+    //Check if b is defined and, if not, return function {a + b}
+    if (b == undefined) {
+      //Debug
+      console.log("Second argument is undefined");
+      return (b) => addTogether(a, b);
+    }
+
+    //If b is defined but is not a number, return undefined
+    if (typeof b != "number") {
+      //Debug
+      console.log("Second arg is NaN");
+      return undefined;
+    }
+    
+    //If both a and b exist and are a number, return their sum
+    return a + b;
+  }
+
+  addTogether(3, 5);

@@ -1,0 +1,79 @@
+---
+layout: default
+title: Roman Numeral Converter
+---
+function convertToRoman(num) {
+let roman = [];
+
+//Calculate how many thousands are in num (with no remainder)
+let numM = Math.floor(num / 1000);
+//Subtract those thousands from num
+num = num - numM * 1000;
+//Add those thousands to roman
+roman.push('M'.repeat(numM));
+//Debug
+console.log("M:", numM, num, roman);
+
+//Repeat for five-hundreds
+let numD = Math.floor(num / 500);
+num = num - numD * 500;
+roman.push('D'.repeat(numD));
+//Debug
+console.log("D:", numD, num, roman);
+
+//Repeat for hundreds
+let numC = Math.floor(num / 100);
+num = num - numC * 100;
+roman.push('C'.repeat(numC));
+//Debug
+console.log("C:", numC, num, roman);
+
+//Repeat for fifties
+let numL = Math.floor(num / 50);
+num = num - numL * 50;
+roman.push('L'.repeat(numL));
+//Debug
+console.log("L:", numL, num, roman);
+
+//Repeat for tens
+let numX = Math.floor(num / 10);
+num = num - numX * 10;
+roman.push('X'.repeat(numX));
+//Debug
+console.log("X:", numX, num, roman);
+
+//Repeat for fives
+let numV = Math.floor(num / 5);
+num = num - numV * 5;
+roman.push('V'.repeat(numV));
+//Debug
+console.log("V:", numV, num, roman);
+
+//Repeat for ones
+let numI = num;
+num = num - numI;
+roman.push('I'.repeat(numI));
+//Debug
+console.log("I:", numI, num, roman);
+
+//Convert roman to string
+console.log("Raw:", roman);
+roman = roman.join('');
+//Debug
+console.log("Joined:", roman);
+
+//Replace pecularities
+roman = roman.replace("VIIII", "IX");
+roman = roman.replace("IIII", "IV");
+roman = roman.replace("LXXXX", "XC");
+roman = roman.replace("XXXX", "XL");
+roman = roman.replace("DCCCC", "CM");
+roman = roman.replace("CCCC", "CD");
+//Debug
+console.log("Replaced:", roman);
+
+//Return final roman
+return roman;
+}
+
+convertToRoman(4);

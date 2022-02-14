@@ -1,0 +1,28 @@
+---
+layout: default
+title: Drop It
+---
+function dropElements(arr, func) {
+  
+  //Loop through array to test each element via func
+  for (var i = 0; i <= arr.length; i++) {
+    var test = arr[0];
+    
+    //If func returns true, break the loop; otherwise, remove the first element
+    if (func(test)) {
+      break;
+    }
+
+    if (i == arr.length) {
+      arr = [];
+      break;
+    }
+
+    arr.shift();
+  }
+
+
+    return arr;
+}
+
+dropElements([1, 2, 3], function(n) {return n < 3; });

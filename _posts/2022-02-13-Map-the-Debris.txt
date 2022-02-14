@@ -1,0 +1,22 @@
+---
+layout: default
+title: Map The Debris
+---
+function orbitalPeriod(arr) {
+  /* Formula, per Wikipedia:
+    orbitalPeriod = 2 * pi * Math.sqrt( (avgAlt + earthRadius) / GM)
+  */
+
+  //Define constants
+  let pi = Math.PI, earthRadius = 6367.4447, GM = 398600.4418;
+
+  //Map through input array
+  return arr.map(({name, avgAlt}) => {
+    //Calculate orbital periods using formula above, pulling avgAlts from input array
+    let orbitalPeriod = Math.round(2 * pi * Math.sqrt(Math.pow(earthRadius + avgAlt, 3) / GM));
+    //Return the updated array
+    return { name, orbitalPeriod };
+  });
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);

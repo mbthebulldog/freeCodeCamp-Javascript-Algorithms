@@ -1,0 +1,62 @@
+---
+layout: default
+title: Cash Register
+---
+function checkCashRegister(price, cash, cid) {
+  //Calculate change needed and set up an array of cash left
+  let change = cash - price;
+  const cashLeft = [];
+
+  //Reference object for coin/bill values
+  const currency = {
+    "PENNY": .01,
+    "NICKEL": .05,
+    "DIME": .10,
+    "QUARTER": .25,
+    "ONE": 1.00,
+    "FIVE": 5.00,
+    "TEN": 10.00,
+    "TWENTY": 20.00,
+    "ONE HUNDRED": 100.00
+  }
+
+  //Sum all cash in drawer
+  let cidSum = 0;
+  for (var i of cid) {
+    cidSum += i[1];
+  }
+  cidSum = cidSum.toFixed(2);
+  
+  //Return "insufficient funds" if change > cash in drawer
+  if (change > cidSum) {
+    return {status: "INSUFFICIENT_FUNDS", change: []};
+  }
+  //Return "closed" if change == cash in drawer
+  else if (change == cidSum) {
+    return {status: "CLOSED", change: cid};
+  }
+  //Otherwise, calculate cash left after providing change
+  else {
+    //Reverse cid to be sorted highest-to-lowest
+    cid = cid.reverse();
+    //Loop through cid subtracting until all change given
+    for (let i of cid) {
+      let coinNum = [i[0], 0];
+      while (change >= currency[i[0]] && i[1] > 0) {
+        i[1] -= currency[i[0]];
+        change -= currency[i[0]];
+        coinNum[1] += currency[i[0]];
+        change = change.toFixed(2);
+      }
+      if (coinNum[1] > 0) {
+        cashLeft.push(coinNum);
+      }
+    }
+  }
+  if (change > 0) {
+    return {status: "INSUFFICIENT_FUNDS", change: []};
+  }
+  return {status: "OPEN", change: cashLeft};
+}
+
+checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]);

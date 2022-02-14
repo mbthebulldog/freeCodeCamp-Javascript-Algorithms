@@ -1,0 +1,60 @@
+---
+layout: default
+title: Telephone Number Validator
+---
+function telephoneCheck(str) {
+  //A MUCH shorter code than my original based on internet research
+  let regex = /^1*\s*(\(\d{3}\)|\d{3})-*\s*\d{3}-*\s*\d{4}$/;
+  return regex.test(str);
+  
+  //Set up regexes to match the first two 3-digit sequences and the final 4-digit sequence
+  let regexOne = /\d{3}/;
+  let regexTwo = /\d{4}/;
+  //Set up variables to hold pieces of the phone number
+  let a = '';
+  let b = '';
+  let c = '';
+
+  //Test if str contains the first 3-digit sequence
+  if (! regexOne.test(str)) {
+    //If not, return false
+    console.log(false);
+    return false;
+  }
+  //If so, save it to 'a' and remove from str
+  a = regexOne.exec(str);
+  console.log(a);
+  str = str.replace(a[0], '');
+  console.log(str);
+
+  //Test if str contains a second 3-digit sequence
+  if (! regexOne.test(str)) {
+    //If not, return false
+    console.log(false);
+    return false;
+  }
+  //If so, save it to 'b' and remove from str
+  b = regexOne.exec(str);
+  console.log(b);
+  str = str.replace(b[0], '');
+  console.log(str);
+
+  //Test if str contains a final 4-digit sequence
+  if (! regexTwo.test(str)) {
+    //If not, return false
+    console.log(false);
+    return false;
+  }
+  //If so, save it to 'c' and remove from str
+  c = regexOne.exec(str);
+  console.log(c);
+  str = str.replace(c[0], '');
+  console.log(str);
+
+  //If code reaches this line, all three sequecns were present, so return true
+  console.log(true);
+  return true;
+
+}
+
+telephoneCheck("555-555-5555");

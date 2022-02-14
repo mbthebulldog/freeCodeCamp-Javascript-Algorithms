@@ -1,0 +1,29 @@
+---
+layout: default
+title: Sum All Primes
+---
+function sumPrimes(num) {
+  var sieve = [], primes = []
+  var sum = 0;
+    
+    //Loop through all numbers from 2 to num
+    for (var i = 2; i <= num; i++) {
+        //Sieve will check if i is an element and, if not, add it to primes
+        if (!sieve[i]) {
+            primes.push(i);
+            //...and add all of its multiples to primes, too!
+            for (var j = i * 2; j <= num; j += i) {
+                sieve[j] = true;
+            }
+        }
+    }
+
+    //Sum all the primes together
+    for (var i = 0; i < primes.length; i++) {
+    sum = sum + primes[i];  
+  };
+    //Return the sum of primes
+    return sum;
+}
+
+sumPrimes(10);

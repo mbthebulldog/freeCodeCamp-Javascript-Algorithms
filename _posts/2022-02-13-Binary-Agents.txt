@@ -1,0 +1,28 @@
+---
+layout: default
+title: Binary Agents
+---
+function binaryAgent(str) {
+  //Split input into array of binary strings
+  var decimal = str.split(' ');
+  //Debugging
+  //console.log(decimal);
+  
+  //Loop through array and convert strings to numbers
+  for (var i = 0; i < decimal.length; i++) {
+    decimal[i] = parseInt(decimal[i], 2);
+    //In the same loop, convert from number to character via character codes
+    decimal[i] = String.fromCharCode(decimal[i]);
+  }
+  //Debugging
+  //console.log(decimal);
+
+  //Combine array back into one string
+  decimal = decimal.join('');
+  //Debugging
+  console.log(decimal);
+
+  return decimal;
+}
+
+binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111");

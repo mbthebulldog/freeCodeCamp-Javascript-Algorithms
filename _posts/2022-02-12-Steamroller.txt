@@ -1,0 +1,24 @@
+---
+layout: default
+title: Steamroller
+---
+function steamrollArray(arr) {
+  const res = [];
+
+  //Loop through the array's length (backwards) and move its elements to res
+  while(arr.length) {
+    //Take elements off end of arr
+    var next = arr.pop();
+    //If the element is an array, add its elements to the end of arr (not as an array)
+    if(Array.isArray(next)) {
+      arr.push(...next);
+      //If the element is not an array, add the element to res
+    } else {
+      res.push(next);
+    }
+  }
+  // reverse and return res
+  return res.reverse();
+}
+
+steamrollArray([1, [2], [3, [[4]]]]);

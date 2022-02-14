@@ -1,0 +1,20 @@
+---
+layout: default
+title: Missing Letters
+---
+function fearNotLetter(str) {
+  let code = str.charCodeAt(0);
+  let missing = undefined;
+
+  str.split('').forEach(letter => {
+      if (code == letter.charCodeAt(0)) {
+        code++;
+      }
+      else {
+        missing = String.fromCharCode(code);
+      }
+    });            
+    return missing;
+}
+
+fearNotLetter("abce");

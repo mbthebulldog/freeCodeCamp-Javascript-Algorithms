@@ -1,0 +1,46 @@
+---
+layout: default
+title: Sum All Odd Fibonacci Numbers
+---
+function sumFibs(num) {
+  var fib = [1, 1], sum = 0;
+
+  //Make an array of all fibonacci numbers; stop when the last one is > num
+  while (fib[fib.length - 1] <= num) {
+    fib.push(fib[fib.length - 1] + fib[fib.length - 2]);
+  }
+  console.log(fib); //Debugging
+
+  //Remove the last element, which is > num
+  fib.pop();
+
+  //Remove any even elements
+  fib = fib.filter(function (a) {
+    return a % 2;
+  })
+  console.log(fib); //Debugging
+ 
+  //Add all the elements together and return the sum
+  for (var i = 0; i < fib.length; i++) {
+    sum = sum + fib[i];  
+  };
+  console.log(sum); //Debugging
+  return sum;
+}
+
+sumFibs(75025);
+
+/* A function that works well for ALL Fib nums, but not for only ODD nums
+function sumFibs(num) {
+  var result = 0, sum1 = 1, sum2 = 1;
+  
+  while (true) {
+      sum1 = sum1 + sum2;
+      if (sum2 >= num) {result = sum2; break};
+
+      sum2 = sum1 + sum2;
+      if (sum1 >= num) {result = sum1; break};
+  }
+  return result;
+}
+*/

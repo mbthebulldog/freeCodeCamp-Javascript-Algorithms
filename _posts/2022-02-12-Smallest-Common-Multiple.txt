@@ -1,0 +1,53 @@
+---
+layout: default
+title: Smallest Common Multiple
+---
+function smallestCommons(arr) {
+  //Find the smaller and the larger number
+  var min = arr.sort((a, b) => a - b)[0];
+  var max = arr.sort((a, b) => a - b)[1];
+  var betwixt = [];
+  var scm = false;
+  //Debugging
+  console.log("min: " + min);
+  console.log("max: " + max);
+
+  //Make an array of all numbers between min and max
+  for (var i = min + 1; i < max; i++) {
+    betwixt.push(i);
+  }
+  //Debugging
+  console.log("betwixt: " + betwixt);
+
+  //Use loops to check multiples of min until one is divisible by min, max and all betwixt
+  for (var j = max; j < 1000000; j += max) {
+    scm = true;
+    
+    //If current multiple (j) is divisible by min and max, scm stays true
+    if (j % min != 0 || j % max != 0) {
+      scm = false;
+    }
+    //Debugging
+    console.log(scm + ": " + j + " divisible by min & max");
+
+    //If current multiple (j) is divisible by all betwixt, scm stays true
+    for (var k = 0; k < betwixt.length; k++) {
+      if (j % betwixt[k] != 0) {
+        scm = false;
+      }
+    }
+    //Debugging
+    console.log(scm + ": " + j + " divisible by betwixt");
+
+    //if scm is still true, break the loop
+    if (scm == true) {
+      break;
+    }
+  }
+  //Debugging
+  console.log("The Smallest Common Denominator is " + j + "!!");
+
+  return j;
+}
+
+smallestCommons([1,5]);
